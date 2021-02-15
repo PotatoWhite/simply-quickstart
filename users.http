@@ -1,0 +1,62 @@
+### POST
+POST localhost:8080/users
+Content-Type: application/json
+
+{
+  "name": "테스터",
+  "email": "test01@example.com",
+  "contacts": [
+    {
+      "type": "HOME",
+      "contact": "+82012340000"
+    },
+    {
+      "type": "OFFICE",
+      "contact": "+82012341111"
+    }
+  ]
+}
+
+### PUT
+PUT localhost:8080/users/1
+Content-Type: application/json
+
+{
+  "name": "테스터",
+  "email": "test02@example.com",
+  "contacts": [
+    {
+      "type": "HOME",
+      "contact": "+82012340000"
+    },
+    {
+      "type": "OFFICE",
+      "contact": "+82012341111"
+    }
+  ]
+}
+
+
+### PATCH
+PATCH localhost:8080/users/1
+Content-Type: application/json
+
+{
+  "contacts": [
+    {
+      "type": "HOME",
+      "contact": "+82012343333"
+    }
+  ]
+}
+
+### DELETE
+DELETE localhost:8080/users/1
+Content-Type: application/json
+
+### GET
+GET localhost:8080/users/1
+
+
+### GET ALL
+GET localhost:8080/users
