@@ -38,8 +38,6 @@ Repository에 연결된 Database에 저장 된다.
 ## 4. 프로젝트 시작하기
 
 Gradle을 통해 다음의 Library를 Import한다.
-
-* Maven 중앙 Respoitory에 Release되기 전까지 Snapshot을 이용한다.
 ```groovy
 repositories {
     mavenCentral()
@@ -58,13 +56,34 @@ annotationProcessor 'org.projectlombok:lombok'
 testImplementation 'org.springframework.boot:spring-boot-starter-test'
 ```
 
-### 4.2 Simply에서 사용하는 Library를 import 한다.
+
+### 4.2 Gradle : Simply에서 사용하는 Library를 import 한다.
 
 ```groovy
 implementation 'io.easywalk:simply-common:0.0.1.RELEASE'
 implementation 'io.easywalk:simply-serviceable:0.0.1.RELEASE'
 implementation 'io.easywalk:simply-controllable:0.0.1.RELEASE'
 ```
+
+### 4.3 Maven: Simply에서 사용하는 Library를 import 한다.
+```xml
+<dependency>
+  <groupId>io.easywalk</groupId>
+  <artifactId>simply-common</artifactId>
+  <version>0.0.1.RELEASE</version>
+</dependency>
+<dependency>
+    <groupId>io.easywalk</groupId>
+    <artifactId>simply-serviceable</artifactId>
+    <version>0.0.1.RELEASE</version>
+</dependency>
+<dependency>
+    <groupId>io.easywalk</groupId>
+    <artifactId>simply-controllable</artifactId>
+    <version>0.0.1.RELEASE</version>
+</dependency>
+```
+
 
 ## 5. User Entity 생성하기
 
