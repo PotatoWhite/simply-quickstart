@@ -26,7 +26,15 @@ Repository에 연결된 Database에 저장 된다.
 
 Gradle을 통해 다음의 Library를 Import한다.
 
-* Maven 중앙 Respoitory에 등록되기 전까지는 참고: [local maven 사용하기](./mavenlocal.md)를 통해 사용해 주세요 ^^;
+* Maven 중앙 Respoitory에 Release되기 전까지 Snapshot을 이용한다.
+```groovy
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots/'
+    }
+}
+```
 
 ### 4.1 Springboot 에서 제공하는 starter, jpa, web 을 import 한다.
 
