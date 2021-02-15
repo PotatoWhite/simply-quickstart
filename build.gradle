@@ -16,9 +16,6 @@ configurations {
 
 repositories {
     mavenCentral()
-    maven {
-        url 'https://oss.sonatype.org/content/repositories/snapshots/'
-    }
 }
 
 configurations.all {
@@ -27,9 +24,9 @@ configurations.all {
 }
 
 dependencies {
-    implementation 'io.easywalk:simply-common:0.0.1-SNAPSHOT'
-    implementation 'io.easywalk:simply-serviceable:0.0.1-SNAPSHOT'
-    implementation 'io.easywalk:simply-controllable:0.0.1-SNAPSHOT'
+    implementation 'io.easywalk:simply-common:0.0.1.RELEASE'
+    implementation 'io.easywalk:simply-serviceable:0.0.1.RELEASE'
+    implementation 'io.easywalk:simply-controllable:0.0.1.RELEASE'
 
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'

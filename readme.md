@@ -14,9 +14,22 @@ Simply를 이용해 Springboot 기반의 Restful API를 만들어 보고 H2 Data
 
 ## 2. Architecture
 
+본 예제에서 사용되는 기술은 다음과 같다.
+- Java
+- JPA
+- Simply(Serviceable, Controllable)
+- Spring Boot
+- H2
+
+본 예제를 통해 구현할 것은 다음과 같다.
+- User Entity
+- User Repository
+- User Service
+- User Controller
+![architecture](./documents/architecture.png)
+
 Quick Starter는 User Entity를 만들어 해당 Entity를 관리하는 Restful API를 자동화 한다. Controller를 통해 Endpoint를 제공하며 이는 Service를 통해 JPA
 Repository에 연결된 Database에 저장 된다.
-![architecture](./documents/architecture.png)
 
 ## 3. Source Code
 
@@ -30,9 +43,6 @@ Gradle을 통해 다음의 Library를 Import한다.
 ```groovy
 repositories {
     mavenCentral()
-    maven {
-        url 'https://oss.sonatype.org/content/repositories/snapshots/'
-    }
 }
 ```
 
@@ -51,9 +61,9 @@ testImplementation 'org.springframework.boot:spring-boot-starter-test'
 ### 4.2 Simply에서 사용하는 Library를 import 한다.
 
 ```groovy
-implementation 'io.easywalk:simply-common:0.0.1-SNAPSHOT'
-implementation 'io.easywalk:simply-serviceable:0.0.1-SNAPSHOT'
-implementation 'io.easywalk:simply-controllable:0.0.1-SNAPSHOT'
+implementation 'io.easywalk:simply-common:0.0.1.RELEASE'
+implementation 'io.easywalk:simply-serviceable:0.0.1.RELEASE'
+implementation 'io.easywalk:simply-controllable:0.0.1.RELEASE'
 ```
 
 ## 5. User Entity 생성하기
