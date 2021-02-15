@@ -15,6 +15,7 @@ Simply를 이용해 Springboot 기반의 Restful API를 만들어 보고 H2 Data
 ## 2. Architecture
 
 본 예제에서 사용되는 기술은 다음과 같다.
+
 - Java
 - JPA
 - Simply(Serviceable, Controllable)
@@ -22,11 +23,12 @@ Simply를 이용해 Springboot 기반의 Restful API를 만들어 보고 H2 Data
 - H2
 
 본 예제를 통해 구현할 것은 다음과 같다.
+
 - User Entity
 - User Repository
 - User Service
 - User Controller
-![architecture](./documents/architecture.png)
+  ![architecture](./documents/architecture.png)
 
 Quick Starter는 User Entity를 만들어 해당 Entity를 관리하는 Restful API를 자동화 한다. Controller를 통해 Endpoint를 제공하며 이는 Service를 통해 JPA
 Repository에 연결된 Database에 저장 된다.
@@ -38,6 +40,7 @@ Repository에 연결된 Database에 저장 된다.
 ## 4. 프로젝트 시작하기
 
 Gradle을 통해 다음의 Library를 Import한다.
+
 ```groovy
 repositories {
     mavenCentral()
@@ -56,7 +59,6 @@ annotationProcessor 'org.projectlombok:lombok'
 testImplementation 'org.springframework.boot:spring-boot-starter-test'
 ```
 
-
 ### 4.2 Gradle : Simply에서 사용하는 Library를 import 한다.
 
 ```groovy
@@ -66,11 +68,12 @@ implementation 'io.easywalk:simply-controllable:0.0.1.RELEASE'
 ```
 
 ### 4.3 Maven: Simply에서 사용하는 Library를 import 한다.
+
 ```xml
 <dependency>
-  <groupId>io.easywalk</groupId>
-  <artifactId>simply-common</artifactId>
-  <version>0.0.1.RELEASE</version>
+    <groupId>io.easywalk</groupId>
+    <artifactId>simply-common</artifactId>
+    <version>0.0.1.RELEASE</version>
 </dependency>
 <dependency>
     <groupId>io.easywalk</groupId>
@@ -83,7 +86,6 @@ implementation 'io.easywalk:simply-controllable:0.0.1.RELEASE'
     <version>0.0.1.RELEASE</version>
 </dependency>
 ```
-
 
 ## 5. User Entity 생성하기
 
@@ -192,11 +194,11 @@ public interface SimplySpec<T, ID> {
 
 ```java
 userService.create(..);
-userService.replaceById(..);
-userService.updateById(..);
-userService.deleteById(..);
-userService.get(..);
-userService.getAll(..);
+        userService.replaceById(..);
+        userService.updateById(..);
+        userService.deleteById(..);
+        userService.get(..);
+        userService.getAll(..);
 ```
 
 ## 7. User Controller 구현
@@ -242,6 +244,7 @@ public class SimplyQuickstartApplication {
 ```
 
 실제 Logging 내용
+
 ```http request
  INFO 22881 --- [nio-8080-exec-7] i.e.s.controllable.SimplyLoggingAspect   : [REQ] PUT /users/1 Param:null, RequestBody:User(id=null, name=테스터, email=test02@example.com, contacts=[io.easywalk.simplyquickstart.user.entities.Contact@689c83af, io.easywalk.simplyquickstart.user.entities.Contact@548ac7b, io.easywalk.simplyquickstart.user.entities.Contact@d8a45f9], createdDate=null)
  INFO 22881 --- [nio-8080-exec-7] i.e.s.controllable.SimplyLoggingAspect   : [RES] PUT /users/1 Param:null, Response:200 User(id=1, name=테스터, email=test02@example.com, contacts=[io.easywalk.simplyquickstart.user.entities.Contact@56ad6797, io.easywalk.simplyquickstart.user.entities.Contact@6e6b43a7, io.easywalk.simplyquickstart.user.entities.Contact@1634de73], createdDate=null)
