@@ -5,8 +5,9 @@ plugins {
 }
 
 group = 'io.easywalk'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.2-SNAPSHOT'
 sourceCompatibility = '11'
+def easywalkVersion = '0.0.3.RELEASE'
 
 configurations {
     compileOnly {
@@ -16,6 +17,7 @@ configurations {
 
 repositories {
     mavenCentral()
+//    maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
 }
 
 configurations.all {
@@ -23,17 +25,22 @@ configurations.all {
     resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
 }
 
+
 dependencies {
-    implementation 'io.easywalk:simply-common:0.0.1.RELEASE'
-    implementation 'io.easywalk:simply-serviceable:0.0.1.RELEASE'
-    implementation 'io.easywalk:simply-controllable:0.0.1.RELEASE'
+    implementation "io.easywalk:simply-common:${easywalkVersion}"
+    implementation "io.easywalk:simply-serviceable:${easywalkVersion}"
+    implementation "io.easywalk:simply-controllable:${easywalkVersion}"
+    implementation "io.easywalk:simply-clientable:${easywalkVersion}"
 
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
     runtimeOnly 'com.h2database:h2'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+    testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
